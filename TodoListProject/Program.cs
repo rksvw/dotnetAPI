@@ -5,6 +5,7 @@ var app = builder.Build();
 
 var todos = new List<Todo>();
 
+// Here we created our CRUD
 // Get request to get all todos list
 app.MapGet("/todos", () => todos);
 
