@@ -1,0 +1,18 @@
+GET http://localhost:5207/todos
+
+###
+POST http://localhost:5207/todos
+Content-Type: application/json
+
+{
+    "id": 5,
+    "name": "NoOne",
+    "dueDate": "2024-08-09",
+    "isCompleted": false
+}
+
+###
+GET http://localhost:5207/todos/5
+
+###
+DELETE http://localhost:5207/todos/5
