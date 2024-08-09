@@ -1,11 +1,23 @@
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Rewrite;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 var todos = new List<Todo>();
 
-// Here we created our CRUD
+// MIDDLEWARE BUILD-IN
+app.UseRewriter(new RewriteOptions().AddRedirect("tasks/(.*)", "todos/$1"));
+
+// MIDDLEWARE CUSTOM
+app.Use(async (context, next) => {
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] || Started");
+    await next(context);
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] || Finished");
+});
+
+
 // Get request to get all todos list
 app.MapGet("/todos", () => todos);
 

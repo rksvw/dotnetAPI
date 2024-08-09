@@ -5,14 +5,17 @@ POST http://localhost:5207/todos
 Content-Type: application/json
 
 {
-    "id": 5,
-    "name": "NoOne",
+    "id": 1,
+    "name": "Monkey D. Luffy",
     "dueDate": "2024-08-09",
     "isCompleted": false
 }
 
 ###
-GET http://localhost:5207/todos/5
+GET http://localhost:5207/todos/1
 
 ###
-DELETE http://localhost:5207/todos/5
+DELETE http://localhost:5207/todos/1
+
+###
+GET http://localhost:5207/tasks/1
