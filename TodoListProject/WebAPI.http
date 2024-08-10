@@ -7,7 +7,7 @@ Content-Type: application/json
 {
     "id": 1,
     "name": "Monkey D. Luffy",
-    "dueDate": "2024-08-09",
+    "dueDate": "2024-09-08",
     "isCompleted": false
 }
 
